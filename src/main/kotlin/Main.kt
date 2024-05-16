@@ -1,7 +1,11 @@
 package ru.netology
 
 fun main() {
-    agoToText(240000)
+    println("Введите количество секунд с посленего визита:")
+    val seconds = readLine()!!.toInt()
+
+    val result = agoToText(seconds)
+    println(result)
 }
 
 fun agoToText(secondsAgo: Int) {
@@ -22,16 +26,16 @@ fun agoToText(secondsAgo: Int) {
 
 fun getMinutes(minutes: Int): String {
     return when {
-        (minutes in 5..20) || (minutes % 10 in 5..9) || (minutes % 10 == 0) -> "минут назад"
-        (minutes % 10 == 1) -> "минут назад"
-        else -> "минут назад"
+        (minutes in 5..20) || (minutes % 10 in 5..9) || (minutes % 10 == 0) -> "минут"
+        (minutes % 10 == 1) -> "минуту"
+        else -> "минуты "
     }
 }
 
 fun getHours(hours: Int): String {
     return when {
-        (hours in 5..20) || (hours % 10 in 5..9) || (hours % 10 == 0) -> "часов назад"
-        (hours % 10 == 1) -> "часов назад"
-        else -> "часов назад"
+        (hours in 5..20) || (hours % 10 in 5..9) || (hours % 10 == 0) -> "часов"
+        (hours % 10 == 1) -> "час"
+        else -> "часа"
     }
 }
